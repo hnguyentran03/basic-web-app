@@ -2,11 +2,11 @@ name: basic-web-app lint and test
 
 on:
 
-push:
+  push:
 
-branches:
-
-- main
+    branches:
+    
+    - main
 
 jobs:
 
