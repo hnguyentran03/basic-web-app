@@ -14,7 +14,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    name: QueryProcessor
+    name: Lint and Test
 
     steps:
 
@@ -22,6 +22,6 @@ jobs:
 
     - uses: bahmutov/npm-install@v1
 
-    - run: npm run lint (Run ESLint)
+    - run: npm run lint
 
-    - run: npm run test (Run Jest)
+    - run: npm run test
