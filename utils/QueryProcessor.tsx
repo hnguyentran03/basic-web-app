@@ -15,6 +15,16 @@ export default function QueryProcessor(query: string): string {
       return parseInt(str); });
 
     return Math.max(...n).toString();
+  } else if (query.toLowerCase().includes("plus")) {
+    let nums = query.split("is")[1].slice(0, -1).split("plus");
+    var n = nums.map(function(str) {
+      return parseInt(str); });
+    
+    let sum = 0;
+    n.forEach( num => {
+      sum += num;
+    })
+    return sum.toString();
   } 
 
   return "";
