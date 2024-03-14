@@ -54,7 +54,7 @@ export default function QueryProcessor(query: string): string {
       return parseInt(str); });
 
     let isPrime = ( numb: number) => {
-      for(let i = 0; i < Math.sqrt(numb); i++) {
+      for(let i = 2; i < Math.sqrt(numb); i++) {
         if (numb % i == 0) {
           return false;
         }
