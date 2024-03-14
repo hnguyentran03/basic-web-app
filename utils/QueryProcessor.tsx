@@ -72,7 +72,7 @@ export default function QueryProcessor(query: string): string {
     ) 
     return res.toString();
   } else if (query.toLowerCase().includes("minus")) {
-    let nums = query.split("is")[1].slice(0, -1).split("plus");
+    let nums = query.split("is")[1].slice(0, -1).split("minus");
     var n = nums.map(function(str) {
       return parseInt(str); });
     
