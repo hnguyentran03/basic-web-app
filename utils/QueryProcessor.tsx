@@ -35,7 +35,19 @@ export default function QueryProcessor(query: string): string {
       prodct *= num;
     })
     return prodct.toString();
-  } 
+  }  else if (query.toLowerCase().includes("square and a cube")) {
+    let nums = query.split(":")[1].slice(0, -1).split(",");
+    var n = nums.map(function(str) {
+      return parseInt(str); });
+
+    let res;
+    n.forEach( num => {
+      if (Number.isInteger(Math.sqrt(num)) && Number.isInteger(Math.cbrt(num))) {
+        res = num;
+      }
+    }) 
+    return res.toString();
+  }
 
   return "";
 }
