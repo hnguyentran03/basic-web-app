@@ -48,7 +48,7 @@ export default function QueryProcessor(query: string): string {
       }
     }) 
     return res.toString();
-  } else if (query.toLowerCase().includes("square and a cube")) {
+  } else if (query.toLowerCase().includes("primes")) {
     let nums = query.split(":")[1].slice(0, -1).split(",");
     var n = nums.map(function(str) {
       return parseInt(str); });
@@ -82,6 +82,14 @@ export default function QueryProcessor(query: string): string {
     })
 
     return sum.toString();
+  } else if (query.toLowerCase().includes("power")) {
+    let nums = query.split("is")[1].slice(0, -1).split("to the power of");
+    var n = nums.map(function(str) {
+      return parseInt(str); });
+    
+    let res = n[0] ** n[1]
+
+    return res.toString();
   }
   
   return "";
