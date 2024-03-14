@@ -48,7 +48,41 @@ export default function QueryProcessor(query: string): string {
       }
     }) 
     return res.toString();
-  }
+  } else if (query.toLowerCase().includes("square and a cube")) {
+    let nums = query.split(":")[1].slice(0, -1).split(",");
+    var n = nums.map(function(str) {
+      return parseInt(str); });
 
+    let isPrime = ( numb: number) => {
+      for(let i = 0; i < Math.sqrt(numb); i++) {
+        if (numb % i == 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    let res = 0;
+    n.forEach( num => {
+      if (isPrime(num)) {
+        res = num;
+        return
+      }
+      }
+    ) 
+    return res.toString();
+  } else if (query.toLowerCase().includes("minus")) {
+    let nums = query.split("is")[1].slice(0, -1).split("plus");
+    var n = nums.map(function(str) {
+      return parseInt(str); });
+    
+    let sum = n[0] * 2;
+    n.forEach( num => {
+      sum -= num;
+    })
+
+    return sum.toString();
+  }
+  
   return "";
 }
