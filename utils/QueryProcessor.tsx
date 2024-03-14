@@ -44,6 +44,7 @@ export default function QueryProcessor(query: string): string {
     n.forEach( num => {
       if (Number.isInteger(Math.sqrt(num)) && Number.isInteger(Math.cbrt(num))) {
         res = num;
+        return;
       }
     }) 
     return res.toString();
