@@ -25,6 +25,16 @@ export default function QueryProcessor(query: string): string {
       sum += num;
     })
     return sum.toString();
+  } else if (query.toLowerCase().includes("multiplied")) {
+    let nums = query.split("is")[1].slice(0, -1).split("multiplied by");
+    var n = nums.map(function(str) {
+      return parseInt(str); });
+    
+    let prodct = 0;
+    n.forEach( num => {
+      prodct *= num;
+    })
+    return prodct.toString();
   } 
 
   return "";
