@@ -40,7 +40,7 @@ export default function QueryProcessor(query: string): string {
     var n = nums.map(function(str) {
       return parseInt(str); });
 
-    let res;
+    let res = 0;
     n.forEach( num => {
       if (Number.isInteger(Math.sqrt(num)) && Number.isInteger(Math.cbrt(num))) {
         res = num;
