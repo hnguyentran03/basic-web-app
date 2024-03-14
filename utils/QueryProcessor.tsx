@@ -30,7 +30,7 @@ export default function QueryProcessor(query: string): string {
     var n = nums.map(function(str) {
       return parseInt(str); });
     
-    let prodct = 0;
+    let prodct = 1;
     n.forEach( num => {
       prodct *= num;
     })
